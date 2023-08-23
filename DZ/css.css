@@ -1,0 +1,81 @@
+.yellow{background: yellow;}
+.green{background: green;}
+.orange{background: orange;}
+
+.anim-message {
+    position: relative;
+    width: 280px;
+    min-height: 300px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.anim-message a, .anim-message__bg {
+    position: absolute;
+}
+
+.anim-message a {
+    top: 13px;
+    left: 15px;
+    display: block;
+    width: 250px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(22, 20, 20);
+}
+
+.anim-message__bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(45deg, rgb(27, 27, 27), rgb(160, 75, 82));
+    border-radius: 15px;
+    animation: animBG 5s infinite;
+    animation-timing-function: ease;
+}
+
+.anim-message__side-1 {
+    opacity: 1;
+    animation: animTextTop 5s infinite;
+}
+
+.anim-message__side-2 {
+    opacity: 0;
+    animation: animTextBottom 5s infinite;
+}
+
+@keyframes animBG {
+    50% {
+        transform: rotateX(180deg);
+        background: linear-gradient(45deg, #1ac969, #0f8143);
+    }
+}
+
+@keyframes animTextTop {
+    10% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    80% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+}
+
+@keyframes animTextBottom {
+    30% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    40%{
+        transform: translateY(-10px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    60% {
+        opacity: 0;
+    }
+}
